@@ -1,4 +1,6 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [data, setData] = useState({
@@ -8,6 +10,15 @@ export default function Login() {
 
   const login = (e) => {
     e.preventDefault();
+    axios
+      .post("http://localhost:8080/login/", data)
+      .then((result) => {
+        console.log(result);
+        if (result.data === "Success") {
+          Navigate("/dashboard");
+        }
+      })
+      .catch((err) => console.log(err));
     console.log("Login form submitted");
   };
   return (
@@ -17,7 +28,7 @@ export default function Login() {
           type="email"
           placeholder="Enter Email"
           value={data.email}
-          onChange={(e) => setData({ ...data, name: e.target.value })}
+          onChange={(e) => setData({ ...data, email: e.target.value })}
         />
         <input
           type="password"

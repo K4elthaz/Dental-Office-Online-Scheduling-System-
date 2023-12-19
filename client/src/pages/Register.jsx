@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export default function Register() {
   const [data, setData] = useState({
@@ -10,6 +11,10 @@ export default function Register() {
 
   const register = (e) => {
     e.preventDefault();
+    axios
+      .post("http://localhost:8080/register/", data)
+      .then((result) => console.log(result))
+      .catch((err) => console.log(err));
   };
 
   return (
