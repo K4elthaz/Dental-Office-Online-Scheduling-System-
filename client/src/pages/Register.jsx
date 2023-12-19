@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import axios from "axios";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -8,8 +12,33 @@ export default function Register() {
     confirmPassword: "",
   });
 
-  const register = (e) => {
+  const register = async (e) => {
     e.preventDefault();
+    const { name, email, password, confirmPassword } = data;
+
+    // Client-side validation
+    if (password !== confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
+
+    try {
+      // Sending only required data to the server
+      const response = await axios.post("/register", {
+        name,
+        email,
+        password,
+      });
+      if (response.data.error) {
+        setData({ name: "", email: "", password: "", confirmPassword: "" });
+        toast.success("Registered Successfully");
+        navigate("/login");
+      } else {
+        toast.error(response.data.error);
+      }
+    } catch (error) {
+      toast.error("Fill all the fields");
+    }
   };
 
   return (
@@ -35,7 +64,7 @@ export default function Register() {
         />
         <input
           type="password"
-          placeholder="Enter Confirm Password"
+          placeholder="Confirm Password"
           value={data.confirmPassword}
           onChange={(e) =>
             setData({ ...data, confirmPassword: e.target.value })
