@@ -18,13 +18,15 @@ import img6 from "../assets/logo2.png";
 import svg1 from "../assets/icon-1.svg";
 import svg2 from "../assets/icon-2.svg";
 import svg3 from "../assets/icon-3.svg";
-import svg4 from "../assets/icon-4.svg";
 
 const test = () => {
-  
   return (
-    <div className="special_page"  style={{ fontSize: "62.5%" }}>
-      <section className="home min-vh-100" id="home" style={{ fontSize: "5px" }}>
+    <div>
+      <section
+        className="home min-vh-100"
+        id="home"
+        style={{ fontSize: "5px" }}
+      >
         <div className="container">
           <Row>
             <Col xs lg="1" className="d-flex align-items-center">
@@ -49,7 +51,11 @@ const test = () => {
                 offer cosmetic dentistry, root canal therapy, cavity
                 inspections, and more.
               </p>
-              <a href="#contact" className="link-btn">
+              <a
+                href="#contact"
+                className="btn btn-success"
+                style={{ fontSize: "20px" }}
+              >
                 make appointment
               </a>
               <div className="image-container d-flex justify-content-center align-items-center">
@@ -106,8 +112,12 @@ const test = () => {
                 smile you have always craved. Our product gets the job done
                 without making you go through any hassle or discomfort.
               </p>
-              <Button href="#contact" className="link-btn">
-                make appointment
+              <Button
+                href="#contact"
+                className="btn btn-success"
+                style={{ fontSize: "20px" }}
+              >
+                Make Appointment
               </Button>
             </Col>
           </Row>
@@ -132,11 +142,6 @@ const test = () => {
           <div className="box">
             <img src={svg3} alt="" />
             <h3 className="text-green">Oral hygiene experts</h3>
-          </div>
-
-          <div className="box">
-            <img src={svg4} alt="" />
-            <h3 className="text-green">Root canal specialist</h3>
           </div>
         </div>
       </section>
@@ -177,99 +182,47 @@ const test = () => {
 
       {/* Reviews Section */}
       <section class="reviews" id="reviews">
+        <h1 class="heading"> Our Clients </h1>
 
-<h1 class="heading"> Our Clients </h1>
+        <div class="box-container container">
+          <div class="box">
+            <img src="images/pic-1.png" alt="" />
+            <p>
+              {" "}
+              I couldn’t believe that it was so afordable compared to the
+              alternatives available in the market.
+            </p>
+          
+            <h3>Alec John Gonzales</h3>
+            <span>Manager</span>
+          </div>
 
-<div class="box-container container">
+          <div class="box">
+            <img src="images/pic-2.png" alt="" />
+            <p>
+              Earlier I used to hide my smile and now I can’t stop smiling.
+              Flexalign aligners changed my life &amp; smile completely.
+            </p>
+          
+            <h3>Arnold Celis</h3>
+            <span>Assistant Manager</span>
+          </div>
 
-   <div class="box">
-      <img src="images/pic-1.png" alt=""/>
-      <p> I couldn’t believe that it was so afordable compared to the alternatives available in the market.</p>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-      </div>
-      <h3>Alan Harris</h3>
-      <span>Manager</span>
-   </div>
-
-   <div class="box">
-      <img src="images/pic-2.png" alt=""/>
-      <p>Earlier I used to hide my smile and now I can’t stop smiling. Flexalign aligners changed my life &amp; smile completely.</p>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-      </div>
-      <h3>Sophie Johnson</h3>
-      <span>Assistant Manager</span>
-   </div>
-
-   <div class="box">
-      <img src="images/pic-3.png" alt=""/>
-      <p>Great experience with DentalClinic aligners. I would recommend this place for they have the best quality service</p>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-      </div>
-      <h3>James Williams</h3>
-      <span>CEO</span>
-   </div>
-
-</div>
-
-</section>
-
-      {/* Contact Section */}
-      <section className="contact" id="contact">
-        <Container>
-          <h1 className="heading">Make Appointment</h1>
-          <form action="" method="post">
-            <span>Enter your name :</span>
-            <input
-              type="text"
-              name="name"
-              placeholder="Enter your name"
-              className="box"
-              required
-            />
-            <span>Enter your email :</span>
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              className="box"
-              required
-            />
-            <span>Enter your number :</span>
-            <input
-              type="number"
-              name="number"
-              placeholder="Enter your number"
-              className="box"
-              required
-            />
-            <span>Enter appointment date :</span>
-            <input type="datetime-local" name="date" className="box" required />
-            <Button type="submit" className="link-btn">
-              make appointment
-            </Button>
-          </form>
-        </Container>
+          <div class="box">
+            <img src="images/pic-3.png" alt="" />
+            <p>
+              Great experience with DentalClinic aligners. I would recommend
+              this place for they have the best quality service
+            </p>
+            <h3>James Lumawag</h3>
+            <span>CEO of Kangkong Chips</span>
+          </div>
+        </div>
       </section>
-
       {/* Footer Section */}
       <section className="footer">
         <Container>
-          <Row>
+          <Row className="credit">
             <Col md={3} className="">
               <i className="fas fa-phone"></i>
               <h3>Phone Number</h3>
@@ -278,7 +231,7 @@ const test = () => {
             <Col md={3} className="">
               <i className="fas fa-map-marker-alt"></i>
               <h3>Our Address</h3>
-              <p>Mumbai, India - 400054</p>
+              <p>Philippines - 123456</p>
             </Col>
             <Col md={3} className="">
               <i className="fas fa-clock"></i>
@@ -288,7 +241,7 @@ const test = () => {
             <Col md={3} className="">
               <i className="fas fa-envelope"></i>
               <h3>Email Address</h3>
-              <p>valentine@gmail.com</p>
+              <p>businessjeremy25@gmail.com</p>
             </Col>
           </Row>
         </Container>

@@ -28,12 +28,12 @@ function App() {
           <Navbar className="navbar" />
           <Toaster position="top-center" toastOptions={{ duration: 3000 }} />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Test />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/appointments" element={<AppointmentForm />} />
-            <Route path="/test" element={<Test />} />
+            <Route path="/home" element={<Home />} />
           </Routes>
         </UserContextProvider>
       </main>
