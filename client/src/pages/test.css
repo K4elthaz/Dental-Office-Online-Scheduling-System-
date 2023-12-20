@@ -1,11 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
-/* :root{
-   --blue:#009EFF;
-   --black:#006DAF;
+:root{
    --white:#fff;
-   --light-color:#666;
-   --light-bg:#eee;
+
    --border:.2rem solid rgba(0,0,0,.1);
    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
 }
@@ -16,7 +13,7 @@
    box-sizing: border-box;
    outline: none; border:none;
    text-decoration: none !important;
-   text-transform: capitalize;
+
 }
 
 *::-webkit-scrollbar{
@@ -30,13 +27,14 @@
 
 *::-webkit-scrollbar-thumb{
    background-color: var(--blue);
-} */
+}
 
 html{
-   font-size: 62.5%;
+   font-size: 70.5%;
    overflow-x: hidden;
    scroll-behavior: smooth;
    scroll-padding-top: 6.5rem;
+   text-transform: capitalize;
 }
 
 section{
@@ -56,7 +54,7 @@ section{
    display: inline-block;
    padding:1rem 3rem;
    border-radius: .5rem;
-   background-color: var(--blue);
+
    cursor: pointer;
    font-size: 1.7rem;
    color:var(--white);
