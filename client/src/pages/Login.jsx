@@ -3,6 +3,8 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/userContext";
+import { Button } from "react-bootstrap";
+
 // import { set } from "mongoose";
 
 export default function Login() {
@@ -104,7 +106,12 @@ export default function Login() {
           </div>
           <span class="span">Forgot password?</span>
         </div>
-        <button class="button-submit">Sign In</button>
+        <div className="d-grid gap-2">
+          <Button variant="success" size="lg">
+            Sign In
+          </Button>
+        </div>
+
         <p class="p">
           Don't have an account? <span class="span">Sign Up</span>
         </p>

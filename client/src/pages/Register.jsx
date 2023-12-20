@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import { Button } from "react-bootstrap";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -132,8 +133,12 @@ export default function Register() {
             ></path>
           </svg>
         </div>
+        <div className="d-grid gap-2">
+          <Button variant="success" size="lg">
+            Submit
+          </Button>
+        </div>
 
-        <button class="button-submit">Submit</button>
         <p class="p">
           Already have an acount ? <a href="#">Signin</a>{" "}
         </p>
