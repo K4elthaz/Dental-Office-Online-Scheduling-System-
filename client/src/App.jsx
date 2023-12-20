@@ -16,6 +16,7 @@ axios.defaults.withCredentials = true;
 
 function App() {
   return (
+    <>
     <main
       style={{
         height: "100%",
@@ -35,6 +36,7 @@ function App() {
       </Routes>
     </UserContextProvider>
     </main>
+    </>
   );
 }
 

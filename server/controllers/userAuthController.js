@@ -32,8 +32,7 @@ const registerUser = async (req, res) => {
       email,
       password: hashedPassword,
     });
-
-    return res.json({ error: "User created successfully", user });
+    return res.json( user );
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: "Something went wrong" });
@@ -41,53 +40,41 @@ const registerUser = async (req, res) => {
 };
 
 const loggedInUser = async (req, res) => {
-  try {
-    const { email, password } = req.body;
-
-    if (!email) {
-      return res.status(400).json({ message: "Email is required" });
-    }
-
-    if (!password) {
-      return res.status(400).json({ message: "Password is required" });
-    }
-
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(400).json({ message: "User not found" });
-    }
-
-    const passwordValid = await comparePassword(password, user.password);
-    if (!passwordValid) {
-      return res.status(400).json({ message: "Invalid password" });
-    }
-
-    const match = await comparePassword(password, user.password);
-    if (!match) {
-      return res.json({ error: "Password Doest Match" });
-    }
-    jwt.sign(
-      { email: user.email, id: user._id, name: user.name },
-      process.env.JWT_SECRET,
-      { expiresIn: "1h" },
-      (err, token) => {
-        if (err) throw err;
-        res.cookie("token", token).json(user);
+    try {
+      const { email, password } = req.body;
+  
+      const user = await User.findOne({ email });
+      if (!user) {
+        return res.status(404).json({ error: "User not found" });
       }
-    );
-    return res.json({ message: "User logged in successfully", user });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "Something went wrong" });
-  }
-};
+  
+      const match = await comparePassword(password, user.password);
+      if (match) {
+        jwt.sign({email: user.email, id: user._id, name: user.name}, process.env.JWT_SECRET,{}, (err,token) => {
+            if(err) throw err;
+            res.cookie("token", token).json(user)
+        })
+      }
+      if(!match){
+        res.json({
+            error: "Password is incorrect"
+        })
+      }
+
+    } catch (error) {
+      console.error(error);
+      
+    }
+  };
+  
+
 
 const getProfile = (req, res) => {
-  const { token } = req.cookies;
+  const { token } = req.cookies
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
       if (err) throw err;
-      return res.json(user);
+      res.json(user);
     });
   } else {
     res.json(null);

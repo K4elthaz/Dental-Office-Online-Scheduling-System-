@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+// import { set } from "mongoose";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -18,26 +19,31 @@ export default function Login() {
 
   const login = async (e) => {
     e.preventDefault();
-    console.log("Login form submitted");
-    const { email, password } = data;
+    const { email, password } = data
+
+    if (!email) {
+      toast.error("Email field is required");
+      return;
+    }
+
     if (!password) {
       toast.error("Password field is required");
       return;
     }
+
     try {
       const { data } = await axios.post("/login", {
         email,
-        password,
-      });
-      if (data.message) {
-        setData({ email: "", password: "" });
-        toast.success("Login Successful");
-        navigate("/dashboard");
+        password
+      })
+      if (data.error) {
+        toast.error(data.error);
       } else {
-        toast.error(data.message);
+        setData({})
+        navigate("/dashboard");
       }
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.error);
     }
   };
 
