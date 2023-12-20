@@ -43,7 +43,7 @@ export default function Register() {
 
   return (
     <div>
-      {/* <form onSubmit={register}>
+      <form onSubmit={register}>
         <input
           type="text"
           placeholder="Enter Name"
@@ -71,55 +71,6 @@ export default function Register() {
           }
         />
         <button type="submit">Register</button>
-      </form> */}
-
-      <form class="forms" onSubmit={register}>
-        <p class="title">Register </p>
-        <p class="message">Signup now and get full access to our app. </p>
-        <label>
-        <input
-          type="text"
-          className="input"
-          value={data.name}
-          onChange={(e) => setData({ ...data, name: e.target.value })}
-        />
-          <span>Firstname</span>
-        </label>
-
-        <label>
-        <input
-          type="email"
-          className="input"
-          value={data.email}
-          onChange={(e) => setData({ ...data, email: e.target.value })}
-        />
-          <span>Email</span>
-        </label>
-
-        <label>
-        <input
-          type="password"
-          className="input"
-          value={data.password}
-          onChange={(e) => setData({ ...data, password: e.target.value })}
-        />
-          <span>Password</span>
-        </label>
-        <label>
-        <input
-          type="password"
-          value={data.confirmPassword}
-          className="input"
-          onChange={(e) =>
-            setData({ ...data, confirmPassword: e.target.value })
-          }
-        />
-          <span>Confirm password</span>
-        </label>
-        <button class="submit">Submit</button>
-        <p class="signin">
-          Already have an acount ? <a href="#">Signin</a>{" "}
-        </p>
       </form>
     </div>
   );
