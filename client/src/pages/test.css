@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
-:root{
+/* :root{
    --blue:#009EFF;
    --black:#006DAF;
    --white:#fff;
@@ -30,7 +30,7 @@
 
 *::-webkit-scrollbar-thumb{
    background-color: var(--blue);
-}
+} */
 
 html{
    font-size: 62.5%;
@@ -46,7 +46,7 @@ section{
 .heading{
    text-align: center;
    font-size: 4rem;
-   color:var(--black);
+   color:#00B84D;
    text-transform: uppercase;
    font-weight: bolder;
    margin-bottom: 3rem;
@@ -60,6 +60,7 @@ section{
    cursor: pointer;
    font-size: 1.7rem;
    color:var(--white);
+   background-color: green;
 }
 
 .link-btn:hover{
@@ -105,13 +106,13 @@ section{
 }
 
 .home{
-   background:url(../images/home-bg.jpg) no-repeat;
+   background:url(../assets/Dental_Clinic.jpg) no-repeat;
    background-size: cover;
-   background-position: center;
+   background-repeat: no-repeat;
 }
 
 .home .content{
-   width: 55rem;
+   width: 70rem;
    padding:2rem;
 }
 
@@ -192,7 +193,7 @@ section{
 }
 
 .process .box-container .box{
-   background-color: var(--blue);
+   background-color: rgba(0, 128, 0, 0.726);
    padding:2rem;
    border-radius: .5rem;
    text-align: center;
@@ -206,13 +207,13 @@ section{
 
 .process .box-container .box h3{
    font-size: 2rem;
-   color:var(--white);
+   color:var(--white) !important;
    margin:1.5rem 0;
 }
 
 .process .box-container .box p{
    font-size: 1.5rem;
-   color:var(--white);
+   color:var(--white) !important;
    line-height: 2;
 }
 
@@ -355,7 +356,24 @@ section{
    color:var(--blue);
 }
 
+.image20 {
+    width: 80% !important;
+    margin-right: 15px;
+    margin-top: 40%;
+  }
+  
+  /* To remove the margin from the last image in the row */
+  .image20:last-child {
+    margin-right: 0;
+  }
 
+  .text-green{
+    color: #00B84D !important;
+  }
+
+  .slogan{
+    width: 100%;
+  }
 
 
 
@@ -424,6 +442,10 @@ section{
       width: auto;
    }
 
+   .slogan{
+    width: 15%;
+  }
+
 }
 
 @media (max-width:450px){
@@ -441,3 +463,21 @@ section{
    }
 
 }
+
+/* CSS */
+.box {
+    transition: transform 0.3s ease; /* Add a smooth transition effect to the whole container */
+  }
+  
+  .box:hover {
+    transform: scale(1.1); /* Scale the container to 110% of its original size on hover */
+  }
+  
+  .box img {
+    transition: transform 0.3s ease; /* Add a smooth transition effect to the image */
+  }
+  
+  .box:hover img {
+    transform: scale(1.1); /* Scale the image to 110% of its original size on hover */
+  }
+  
