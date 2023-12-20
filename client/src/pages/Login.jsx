@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/userContext";
 // import { set } from "mongoose";
 
 export default function Login() {
   const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -19,7 +21,7 @@ export default function Login() {
 
   const login = async (e) => {
     e.preventDefault();
-    const { email, password } = data
+    const { email, password } = data;
 
     if (!email) {
       toast.error("Email field is required");
@@ -32,14 +34,14 @@ export default function Login() {
     }
 
     try {
-      const { data } = await axios.post("/login", {
+      const { data: userData } = await axios.post("/login", {
         email,
-        password
-      })
-      if (data.error) {
-        toast.error(data.error);
+        password,
+      });
+      if (userData.error) {
+        toast.error(userData.error);
       } else {
-        setData({})
+        setUser(userData);
         navigate("/dashboard");
       }
     } catch (error) {
@@ -48,7 +50,7 @@ export default function Login() {
   };
 
   return (
-    <div style={{display:"flex", justifyContent:"center"}}>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <form class="form" onSubmit={login}>
         <div class="flex-column">
           <label>Email </label>
@@ -106,7 +108,7 @@ export default function Login() {
 
         <div class="flex-row">
           <div>
-            <input type="checkbox" style={{ cursor: "pointer" }}/>
+            <input type="checkbox" style={{ cursor: "pointer" }} />
             <label>Remember me </label>
           </div>
           <span class="span">Forgot password?</span>

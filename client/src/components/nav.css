@@ -6,27 +6,27 @@
 }
 
 .navigations {
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Center the links and push the image to the start */
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .nav-links {
-    display: flex;
-    align-items: center;
-    flex-grow: 1; /* Grow to take remaining space */
-    justify-content: center; /* Center the links within their container */
-  }
-  .nav-links .nav-link {
-    margin-right: 15px;
-  }
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Grow to take remaining space */
+  justify-content: center; /* Center the links within their container */
+}
+.nav-links .nav-link {
+  margin-right: 15px;
+}
 
-  .button-container {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-  }
+.button-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
 .coin {
   top: 0;
   left: 0;
