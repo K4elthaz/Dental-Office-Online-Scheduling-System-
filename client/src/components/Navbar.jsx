@@ -25,7 +25,12 @@ export default function CustomNavbar() {
       <Container fluid>
         <Navbar.Brand>
           <Link to="/">
-            <img src={Logo} alt="logo" className="coin" />
+            <img
+              src={Logo}
+              alt="logo"
+              className="coin"
+              style={{ maxWidth: "250px" }}
+            />
             <span
               className="ms-2"
               style={{ color: "#0a9644", fontSize: "16px" }}
@@ -34,8 +39,8 @@ export default function CustomNavbar() {
             </span>
           </Link>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <Link to="/" className="nav-link">
               Home

@@ -134,7 +134,7 @@ export default function Register() {
           </svg>
         </div>
         <div className="d-grid gap-2">
-          <Button variant="success" size="lg">
+          <Button variant="success" size="lg" type="submit">
             Submit
           </Button>
         </div>
