@@ -67,8 +67,6 @@ const loggedInUser = async (req, res) => {
     }
   };
   
-
-
 const getProfile = (req, res) => {
   const { token } = req.cookies
   if (token) {
@@ -81,9 +79,15 @@ const getProfile = (req, res) => {
   }
 };
 
+const logoutUser = (req, res) => {
+  res.clearCookie("token"); // Clear the JWT token cookie
+  res.json({ message: "Logout successful" });
+};
+
 module.exports = {
   test,
   registerUser,
   loggedInUser,
   getProfile,
+  logoutUser,
 };
