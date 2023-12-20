@@ -107,10 +107,12 @@ export default function Login() {
           <span class="span">Forgot password?</span>
         </div>
         <div className="d-grid gap-2">
-          <Button variant="success" size="lg">
+          <Button variant="success" size="lg" type="submit">
             Sign In
           </Button>
         </div>
+
+        {/* <button class="button-submit">Sign In</button> */}
 
         <p class="p">
           Don't have an account? <span class="span">Sign Up</span>
