@@ -18,26 +18,25 @@ axios.defaults.withCredentials = true;
 function App() {
   return (
     <>
-    <main
-      style={{
-        height: "100%",
-        minHeight: "100vh",
-        
-      }}
-    >
-    <UserContextProvider>
-      <Navbar className="navbar" />
-      <Toaster position="top-center" toastOptions={{ duration: 3000 }} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/appointments" element={<AppointmentForm />} />
-        <Route path="/test" element={<Test />} />
-      </Routes>
-    </UserContextProvider>
-    </main>
+      <main
+        style={{
+          height: "100%",
+          minHeight: "100vh",
+        }}
+      >
+        <UserContextProvider>
+          <Navbar className="navbar" />
+          <Toaster position="top-center" toastOptions={{ duration: 3000 }} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/appointments" element={<AppointmentForm />} />
+            <Route path="/test" element={<Test />} />
+          </Routes>
+        </UserContextProvider>
+      </main>
     </>
   );
 }

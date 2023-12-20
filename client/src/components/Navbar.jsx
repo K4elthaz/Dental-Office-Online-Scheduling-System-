@@ -1,16 +1,15 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import Nav from "react-bootstrap/Nav";
-import { Container, Button } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import "./nav.css";
 import Logo from "../assets/dental.png";
 import { UserContext } from "../../context/userContext";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
-export default function Navbar() {
+export default function CustomNavbar() {
   const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext);
+
   const handleLogout = async () => {
     try {
       await axios.post("/logout");
@@ -22,30 +21,43 @@ export default function Navbar() {
   };
 
   return (
-    <Container fluid>
-      <div className="navigations">
-        <img src={Logo} alt="logo" className="coin" />
-        <Nav className="nav-links" activeKey="/">
-          <Link to="/" className="nav-link">
-            <p>Home</p>
+    <Navbar bg="light" expand="lg">
+      <Container fluid>
+        <Navbar.Brand>
+          <Link to="/">
+            <img src={Logo} alt="logo" className="coin" />
+            <span
+              className="ms-2"
+              style={{ color: "#0a9644", fontSize: "16px" }}
+            >
+              DentalClinic.
+            </span>
           </Link>
-          <Link to="/" className="nav-link">
-            <p>Schedule an Appointment</p>
-          </Link>
-          <Link to="/register" className="nav-link">
-            <p>Register</p>
-          </Link>
-          {user ? (
-            <Link to="#" className="nav-link" onClick={handleLogout}>
-              <p>Logout</p>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Link to="/" className="nav-link">
+              Home
             </Link>
-          ) : (
-            <Link to="/login" className="nav-link">
-              <p>Login</p>
+            <Link to="/" className="nav-link">
+              Schedule an Appointment
             </Link>
-          )}
-        </Nav>
-      </div>
-    </Container>
+            <Link to="/register" className="nav-link">
+              Register
+            </Link>
+            {user ? (
+              <Link to="#" className="nav-link" onClick={handleLogout}>
+                Logout
+              </Link>
+            ) : (
+              <Link to="/login" className="nav-link">
+                Login
+              </Link>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }

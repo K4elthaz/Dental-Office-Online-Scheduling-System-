@@ -1,38 +1,40 @@
 import React, { useEffect, useState } from "react";
-import { Container, Carousel } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import img1 from '../assets/DALLE1.png';
-import img2 from '../assets/DALLE2.png';
-import img3 from '../assets/DALLE3.png';
-
+import { Container, Carousel, Button } from "react-bootstrap";
+import img1 from "../assets/DALLE1.png";
+import img2 from "../assets/DALLE2.png";
+import img3 from "../assets/DALLE3.png";
+import "../index.css";
 
 export default function Home() {
-  // Define your state and variables here
   const [headingIndex, setHeadingIndex] = useState(0);
 
-  // Define your Carousel content (image URLs) here
   const carouselItems = [
-    { src: img1, alt: "First slide" },
-    { src: img2, alt: "Second slide" },
-    { src: img3, alt: "Third slide" },
+    {
+      src: img1,
+      alt: "First slide",
+      label: "Allow us to make your smile brighter.",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    },
+    {
+      src: img2,
+      alt: "Second slide",
+      label: "Allow us to make your smile brighter.",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    },
+    {
+      src: img3,
+      alt: "Third slide",
+      label: "Allow us to make your smile brighter.",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    },
   ];
 
-  // Define your styles here (if needed)
-  const headingStyle = {
-    // Your heading style
-  };
-
-  const centeredHeadingStyle = {
-    // Your centered heading style
-  };
-
-  // Function to handle slide change
   const handleSlideChange = (selectedIndex) => {
     setHeadingIndex(selectedIndex);
   };
 
   return (
-    <div>
+    <Container fluid className="p-0">
       <Carousel
         fade
         controls={false}
@@ -44,23 +46,32 @@ export default function Home() {
       >
         {carouselItems.map((item, index) => (
           <Carousel.Item key={index}>
-          <img
-            className="d-block w-100 carousel-img custom-carousel-img"
-            src={item.src}
-            alt={item.alt}
-          />
-        </Carousel.Item>
+            <div className="custom-carousel-caption">
+              <img
+                className="d-block w-100 carousel-img custom-carousel-img"
+                src={item.src}
+                alt={item.alt}
+              />
+              <div className="custom-caption-content">
+                <p className="title-header">{item.label}</p>
+                <p className="title-desc" style={{ textAlign: "justify" }}>
+                  {item.text}
+                </p>
+                <Button
+                  variant="success"
+                  classname="mt-3 text-white responsive-btn"
+                  style={{
+                    padding: "8px 16px",
+                    fontSize: "14px",
+                  }}
+                >
+                  Make Appointment
+                </Button>
+              </div>
+            </div>
+          </Carousel.Item>
         ))}
       </Carousel>
-      {/* <div className="backdrop" style={headingStyle}>
-        <h1 className="centered-heading" style={centeredHeadingStyle}>
-          {carouselItems[headingIndex].alt}
-        </h1>
-        <h4 className="centered-description">
-          "Protecting Your Health, Securing Your Peace of Mind - Healthcare
-          Security Solutions."
-        </h4>
-      </div> */}
-      </div>
+    </Container>
   );
 }

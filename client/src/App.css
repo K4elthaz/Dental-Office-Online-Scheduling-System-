@@ -41,12 +41,11 @@
 .read-the-docs {
   color: #888;
 }
-/* Add this CSS to your stylesheet or component */
 .custom-carousel-img {
-  width: 100%; /* Set width to 100% for responsiveness */
-  height: auto; /* Automatically adjust height to maintain aspect ratio */
-  max-height: 820px;
-  opacity: 0.8;
+  width: 100%;
+  height: 100vh;
+  max-height: 874px;
+  opacity: 0.9;
   object-fit: cover;
 }
 
@@ -57,14 +56,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.26); /* Adjust the color and opacity as needed */
+  background-color: rgba(0, 0, 0, 0.26);
   z-index: 1;
 }
 
 .custom-carousel-img-container {
   position: relative;
 }
-
 
 /* LoginCSS */
 .form {
@@ -75,11 +73,13 @@
   padding: 30px;
   width: 450px;
   border-radius: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 ::placeholder {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .form button {
@@ -102,7 +102,6 @@
 }
 
 .input {
-  
   border-radius: 10px;
   border: none;
   width: 85%;
@@ -114,7 +113,7 @@
 }
 
 .inputForm:focus-within {
-  border: 1.5px solid #2d79f3;
+  border: 1.5px solid #0a9644;
 }
 
 .flex-row {
@@ -133,7 +132,6 @@
 
 .span {
   font-size: 14px;
-  margin-left: 5px;
   color: #2d79f3;
   font-weight: 500;
   cursor: pointer;
@@ -141,7 +139,7 @@
 
 .button-submit {
   margin: 20px 0 10px 0;
-  background-color: #151717;
+  background-color: #0a9644;
   border: none;
   color: white;
   font-size: 15px;
@@ -153,7 +151,7 @@
 }
 
 .button-submit:hover {
-  background-color: #252727;
+  background-color: #5bdf92;
 }
 
 .p {
@@ -161,27 +159,6 @@
   color: black;
   font-size: 14px;
   margin: 5px 0;
-}
-
-.btn {
-  margin-top: 10px;
-  width: 100%;
-  height: 50px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 500;
-  gap: 10px;
-  border: 1px solid #ededef;
-  background-color: white;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-}
-
-.btn:hover {
-  border: 1px solid #2d79f3;
-  ;
 }
 
 /* RegisterCSS */
@@ -198,7 +175,7 @@
 
 .title {
   font-size: 28px;
-  color: royalblue;
+  color: #0a9644;
   font-weight: 600;
   letter-spacing: -1px;
   position: relative;
@@ -207,20 +184,21 @@
   padding-left: 30px;
 }
 
-.title::before,.title::after {
+.title::before,
+.title::after {
   position: absolute;
   content: "";
   height: 16px;
   width: 16px;
   border-radius: 50%;
   left: 0px;
-  background-color: royalblue;
+  background-color: #0a9644;
 }
 
 .title::before {
   width: 18px;
   height: 18px;
-  background-color: royalblue;
+  background-color: #0a9644;
 }
 
 .title::after {
@@ -229,7 +207,8 @@
   animation: pulse 1s linear infinite;
 }
 
-.message, .signin {
+.message,
+.signin {
   color: rgba(88, 87, 87, 0.822);
   font-size: 14px;
 }
@@ -280,7 +259,8 @@
   left: 15px;
 }
 
-.forms label .input:focus + span,.form label .input:valid + span {
+.forms label .input:focus + span,
+.form label .input:valid + span {
   top: 35px;
   font-size: 0.7em;
   font-weight: 600;
@@ -298,7 +278,7 @@
   border-radius: 10px;
   color: #fff;
   font-size: 16px;
-  transform: .3s ease;
+  transform: 0.3s ease;
 }
 
 .submit:hover {

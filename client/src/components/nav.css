@@ -1,8 +1,23 @@
 .custom-nav-link {
-  max-width: 120px; /* Adjust the value as per your needs */
+  max-width: 150px; /* Adjust the value as per your needs */
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.nav-link {
+  font-weight: 400;
+  color: #0a9644;
+  font-size: small;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  padding: 0;
 }
 
 .navigations {
@@ -12,21 +27,6 @@
   align-items: center;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  flex-grow: 1; /* Grow to take remaining space */
-  justify-content: center; /* Center the links within their container */
-}
-.nav-links .nav-link {
-  margin-right: 15px;
-}
-
-.button-container {
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
-}
 .coin {
   top: 0;
   left: 0;
@@ -34,7 +34,7 @@
   bottom: 0;
   animation: rotate_4001510 7s infinite linear;
   transform-style: preserve-3d;
-  width: 5%;
+  width: 12%;
 }
 
 .coin .side,
