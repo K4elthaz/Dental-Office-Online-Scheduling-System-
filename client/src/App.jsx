@@ -10,6 +10,7 @@ import { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { UserContextProvider } from "../context/userContext";
 import AppointmentForm from "./pages/Appointment";
+import Test from "./pages/test";
 
 axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = true;
@@ -33,6 +34,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/appointments" element={<AppointmentForm />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </UserContextProvider>
     </main>
