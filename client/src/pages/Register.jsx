@@ -62,11 +62,11 @@ export default function Register() {
         height: "100vh",
       }}
     >
-      <form class="form" onSubmit={register}>
-        <p class="title">Register </p>
-        <p class="message">Signup now and get full access to our app. </p>
+      <form className="form" onSubmit={register}>
+        <p className="title">Register </p>
+        <p className="message">Signup now and get full access to our app. </p>
 
-        <div class="inputForm">
+        <div className="inputForm">
           <input
             type="text"
             placeholder="Enter your Name"
@@ -76,7 +76,7 @@ export default function Register() {
           />
         </div>
 
-        <div class="inputForm">
+        <div className="inputForm">
           <input
             type="email"
             placeholder="Enter your Email"
@@ -86,7 +86,7 @@ export default function Register() {
           />
         </div>
 
-        <div class="inputForm">
+        <div className="inputForm">
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Enter your Password"
@@ -109,7 +109,7 @@ export default function Register() {
           </svg>
         </div>
 
-        <div class="inputForm">
+        <div className="inputForm">
           <input
             type={showConfirmPassword ? "text" : "password"}
             placeholder="Confirm your Password"
@@ -139,7 +139,7 @@ export default function Register() {
           </Button>
         </div>
 
-        <p class="p">
+        <p className="p">
           Already have an acount ? <a href="#">Signin</a>{" "}
         </p>
       </form>

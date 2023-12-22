@@ -285,6 +285,10 @@
   background-color: rgb(56, 90, 194);
 }
 
+.custom-calendar {
+  background-color: black !important; /* Replace with the desired background color */
+}
+
 @keyframes pulse {
   from {
     transform: scale(0.9);

@@ -44,7 +44,7 @@ export default function Login() {
         toast.error(userData.error);
       } else {
         setUser(userData);
-        navigate("/dashboard");
+        navigate("/home");
       }
     } catch (error) {
       toast.error(error.response.data.error);
@@ -60,13 +60,13 @@ export default function Login() {
         height: "100vh",
       }}
     >
-      <form class="form" onSubmit={login}>
-        <p class="title">Welcome back!</p>
-        <p class="message">
+      <form className="form" onSubmit={login}>
+        <p className="title">Welcome back!</p>
+        <p className="message">
           Sign in to access your account and explore our app.
         </p>
 
-        <div class="inputForm">
+        <div className="inputForm">
           <input
             type="email"
             placeholder="Enter your Email"
@@ -76,7 +76,7 @@ export default function Login() {
           />
         </div>
 
-        <div class="inputForm">
+        <div className="inputForm">
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Enter your Password"
@@ -99,22 +99,19 @@ export default function Login() {
           </svg>
         </div>
 
-        <div class="flex-row">
+        <div className="flex-row">
           <div className=" d-flex align-items-center">
             <input type="checkbox" style={{ cursor: "pointer" }} />
             <label className="ms-2">Remember me </label>
           </div>
-          <span class="span">Forgot password?</span>
+          <span className="span">Forgot password?</span>
         </div>
         <div className="d-grid gap-2">
           <Button variant="success" size="lg" type="submit">
             Sign In
           </Button>
         </div>
-
-        {/* <button class="button-submit">Sign In</button> */}
-
-        <p class="p">
+        <p className="p">
           Don't have an account? <span class="span">Sign Up</span>
         </p>
       </form>

@@ -42,15 +42,20 @@ export default function CustomNavbar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            <Link to="/" className="nav-link">
+            <Link to="/home" className="nav-link">
               Home
             </Link>
-            <Link to="/" className="nav-link">
+            <Link to="/appointments" className="nav-link">
               Schedule an Appointment
             </Link>
-            <Link to="/register" className="nav-link">
-              Register
+            <Link to="/dashboard" className="nav-link">
+              Schedules
             </Link>
+            {!user && ( // Conditionally render the "Register" link
+              <Link to="/register" className="nav-link">
+                Register
+              </Link>
+            )}
             {user ? (
               <Link to="#" className="nav-link" onClick={handleLogout}>
                 Logout

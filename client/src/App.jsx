@@ -11,6 +11,7 @@ import axios from "axios";
 import { UserContextProvider } from "../context/userContext";
 import AppointmentForm from "./pages/Appointment";
 import Test from "./pages/test";
+import PrivateRoute from "./components/PrivateRoute";
 
 axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = true;
@@ -29,11 +30,11 @@ function App() {
           <Toaster position="top-center" toastOptions={{ duration: 3000 }} />
           <Routes>
             <Route path="/" element={<Test />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/appointments" element={<AppointmentForm />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </UserContextProvider>
       </main>

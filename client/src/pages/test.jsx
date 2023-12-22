@@ -147,11 +147,11 @@ const test = () => {
       </section>
 
       {/* Process Section */}
-      <section class="process">
-        <h1 class="heading">work process</h1>
+      <section className="process">
+        <h1 className="heading">work process</h1>
 
-        <div class="box-container container">
-          <div class="box">
+        <div className="box-container container">
+          <div className="box">
             <img src="images/process-1.png" alt="" />
             <h3>Cosmetic Dentistry</h3>
             <p>
@@ -160,7 +160,7 @@ const test = () => {
             </p>
           </div>
 
-          <div class="box">
+          <div className="box">
             <img src="images/process-2.png" alt="" />
             <h3>Pediatric Dentistry</h3>
             <p>
@@ -169,7 +169,7 @@ const test = () => {
             </p>
           </div>
 
-          <div class="box">
+          <div className="box">
             <img src="images/process-3.png" alt="" />
             <h3>Dental Implants</h3>
             <p>
@@ -181,11 +181,11 @@ const test = () => {
       </section>
 
       {/* Reviews Section */}
-      <section class="reviews" id="reviews">
-        <h1 class="heading"> Our Clients </h1>
+      <section className="reviews" id="reviews">
+        <h1 className="heading"> Our Clients </h1>
 
-        <div class="box-container container">
-          <div class="box">
+        <div className="box-container container">
+          <div className="box">
             <img src="images/pic-1.png" alt="" />
             <p>
               {" "}
@@ -197,7 +197,7 @@ const test = () => {
             <span>Manager</span>
           </div>
 
-          <div class="box">
+          <div className="box">
             <img src="images/pic-2.png" alt="" />
             <p>
               Earlier I used to hide my smile and now I can’t stop smiling.
@@ -208,7 +208,7 @@ const test = () => {
             <span>Assistant Manager</span>
           </div>
 
-          <div class="box">
+          <div className="box">
             <img src="images/pic-3.png" alt="" />
             <p>
               Great experience with DentalClinic aligners. I would recommend
